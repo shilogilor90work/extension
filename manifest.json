@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "home",
+    "description": "family usage",
+
+    "version": "0.0.1",
+
+    "browser_action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup/popup.html"
+    },
+
+    "permissions": [
+        "*://*.ariel.com/*",
+        "*://*.sploder.com/*",
+        "*://*.kizi.com/*",
+        "*://*.tankionline.com/*",
+        "*://*.y8.com/*",
+        "tabs",
+        "activeTab"
+    ],
+    "background": {
+        "scripts": ["js/jquery-3.1.1.min.js", "js/jquery.caret.min.js", "js/jquery.atwho.min.js", "background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["https://meyda.ariel.ac.il/michlol3/StudentPortalWap/Pt_login.aspx"],
+        "js": ["js/jquery-3.1.1.min.js", "js/jquery.caret.min.js", "js/jquery.atwho.min.js", "ariel/login.js"]
+    }]
+}
